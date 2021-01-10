@@ -78,7 +78,7 @@ class LocationPickActivity : AppCompatActivity(), OnMapReadyCallback {
 
         btnAddLocationPoint.setOnClickListener {
 
-            if(isNetworkActive){
+            if(isNetworkActive ){
                 mCenterLatLong = map.cameraPosition.target
                 println("Marker position is::: $mCenterLatLong")
                 getAddressFromLocationPoint(mCenterLatLong)
@@ -184,20 +184,24 @@ class LocationPickActivity : AppCompatActivity(), OnMapReadyCallback {
         )
 
 
-        val address: String =
-            addresses[0].getAddressLine(0)
+        //addresses object null check handled.
+        if(addresses!=null){
+            val address: String =
+                addresses[0].getAddressLine(0)
 
-        val db = WeatherDatabase(this@LocationPickActivity)
-        GlobalScope.launch {
+            val db = WeatherDatabase(this@LocationPickActivity)
+            GlobalScope.launch {
 
-            val locationModel = LocationModel(address = address, lat = location.latitude, lng = location.longitude)
-            db.locationModelDao().insert(locationModel)
-        }.invokeOnCompletion {
+                val locationModel = LocationModel(address = address, lat = location.latitude, lng = location.longitude)
+                db.locationModelDao().insert(locationModel)
+            }.invokeOnCompletion {
 
-            val intent = Intent(this@LocationPickActivity, MainFragmentHolderActivity::class.java)
-            startActivity(intent)
-            finish()
+                val intent = Intent(this@LocationPickActivity, MainFragmentHolderActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
+
 
 
     }
