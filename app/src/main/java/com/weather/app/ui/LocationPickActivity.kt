@@ -185,9 +185,8 @@ class LocationPickActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         //addresses object null check handled.
-        if(addresses!=null){
-            val address: String =
-                addresses[0].getAddressLine(0)
+        if(addresses!=null && !addresses.isEmpty()){
+            val address: String = addresses[0].getAddressLine(0)
 
             val db = WeatherDatabase(this@LocationPickActivity)
             GlobalScope.launch {
