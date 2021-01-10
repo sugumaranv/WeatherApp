@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Weather App</string>
+    <string name="my_dialog_title">GPS Warning</string>
+    <string name="my_dialog_message">Please turn on the GPS service...!</string>
+    <string name="my_dialog_button_yes">YES</string>
+    <string name="my_dialog_button_no">NO</string>
+    <string name="base_help">https://openweathermap.org/api</string>
+    <string name="no_network_title">Network Warning</string>
+    <string name="no_network_message">Network not available, please check the inernet connection...</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtTextLocationSearch"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="BookMark location search here"
+        android:layout_margin="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/edtTextLocationSearch"
+        android:layout_above="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bookmarkLocationRecyclerView"/>
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnPickLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick location"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+</RelativeLayout>
